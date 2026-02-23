@@ -1,3 +1,0 @@
-Hello Guys,
-
-This is a new repo for adding Terraform code.
