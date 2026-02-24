@@ -25,4 +25,13 @@ module "vnet" {
 
 
 }
+# kapil...
+
+module "subnet" {
+  source = "../child/subnet"
+  subnet_name = "subnet_to_do"
+  rg_name   = module.res.rg_name
+  vnet_name = module.vnet
+
+}
 
