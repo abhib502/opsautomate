@@ -8,7 +8,7 @@ module "res" {
   rg_loc2  = "West US"
 }
 
-
+//testing restruction 
 module "storage" {
   source  = "../child/Storage"
   rg_name = module.res.rg_name
