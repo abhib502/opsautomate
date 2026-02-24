@@ -5,10 +5,12 @@ module "res" {
   rg_name1 = "Angoor"
   rg_loc1  = "East US"
   rg_name2 = "Akhil"
+  
   rg_loc2  = "West US"
 }
 
 //testing restruction 
+//testing code feature brach varun don bhai 
 module "storage" {
   source  = "../child/Storage"
   rg_name = module.res.rg_name
