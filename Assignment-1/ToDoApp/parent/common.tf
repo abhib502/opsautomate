@@ -15,3 +15,12 @@ module "storage" {
   rg_loc  = module.res.rg_loc
 }
 
+module "vnet" {
+  source    = "../child/vnet"
+  vnet_name = "vent_to_do"
+  rg_name   = module.res.rg_name
+  rg_loc    = module.res.rg_loc
+
+
+}
+
