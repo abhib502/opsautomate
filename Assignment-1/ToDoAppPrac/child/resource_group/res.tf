@@ -1,4 +1,4 @@
 resource "azurerm_resource_group" "rgb" {
-  name     = "akhnoor"
-  location = "Central India"
+  name     = var.rg_name
+  location = var.rg_loc
 }
