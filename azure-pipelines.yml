@@ -7,7 +7,7 @@ trigger:
 - none
 
 pool:
-  CICD AGENT POOL
+  AgentCI
 
 steps:
 - script: echo Hello, world!
