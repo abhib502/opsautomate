@@ -7,18 +7,31 @@ trigger:
 - none
 
 pool:
-  CICD AGENT POOL
+  CloudAgentPool
 
 steps:
-- script: echo Hello, world!
+- script: echo Hello, world_cloud
   displayName: 'Run a one-line script'
-
 
 - task: TerraformTask@5
   inputs:
     provider: 'azurerm'
     command: 'init'
-    backendServiceArm: 'DevOps Service Connect'
+    backendServiceArm: 'Cloudconnect'
+    backendAzureRmResourceGroupName: 'DevOpsRG'
     backendAzureRmStorageAccountName: 'devopstorage121'
     backendAzureRmContainerName: 'devopscontainer'
-    backendAzureRmKey: 'learndevops.tfstate'
+    backendAzureRmKey: 'cloudconnect.tfstate'
+
+- task: TerraformTask@5
+  inputs:
+    provider: 'azurerm'
+    command: 'plan'
+    environmentServiceNameAzureRM: 'Cloudconnect'
+
+
+- task: TerraformTask@5
+  inputs:
+    provider: 'azurerm'
+    command: 'apply'
+    environmentServiceNameAzureRM: 'Cloudconnect'
